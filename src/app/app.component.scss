@@ -1,4 +1,17 @@
-.list{
-  display: flex;
-  justify-content: center;
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1F2129;
+}
+.sideStar{
+  background-color: #191A21;
+  color: white
+}
+.sideEnd{
+  background-color: #2A2B36;
+  color: white;
+  width: 25%;
 }

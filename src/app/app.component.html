@@ -1,7 +1,20 @@
-<div class="list">
-  <app-progress-spinner></app-progress-spinner>
-  <app-progress-spinner></app-progress-spinner>
-  <app-progress-spinner></app-progress-spinner>
-  <app-progress-spinner></app-progress-spinner>
+<mat-sidenav-container class="example-container" >
 
-</div>
+  <mat-sidenav opened mode="side" class="sideStar">Start content</mat-sidenav>
+
+  <mat-sidenav opened mode="side" position="end" class="sideEnd">
+
+    <div *ngFor="let chapter of chapters; index as i">
+      <div [ngClass]="'step'">{{chapter.title}}</div>
+      <app-progress-spinner></app-progress-spinner>
+      <div *ngIf="i === cont">
+
+      </div>
+    </div>
+  </mat-sidenav>
+
+  <video width="320" height="240" controls #videoChap (timeupdate)="contando(videoChap.currentTime)">
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</mat-sidenav-container>

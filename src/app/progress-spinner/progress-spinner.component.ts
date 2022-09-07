@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 
 @Component({
@@ -8,6 +8,8 @@ import { ThemePalette } from '@angular/material/core';
 })
 export class ProgressSpinnerComponent implements OnInit {
   defaultColor: ThemePalette = 'accent';
+
+
   constructor() { }
 
   ngOnInit(): void {
