@@ -11,16 +11,6 @@ export class AppComponent {
   {title:'Fundamentals of Web Design', link: ''},
   {title:'Improving Visual Skills', link: ''},
   {title:'Finding inspiration', link: ''}]
-  value = 0;
-  cont = 0
-  onNextChapter(){
-    this.cont++;
-    if(this.cont === this.chapters.length)
-      this.cont = 0;
-    this.value = 0;
-  }
 
-  contando(videochap: any){
-    this.value = videochap*10;
-  }
+  cont = 0;
 }

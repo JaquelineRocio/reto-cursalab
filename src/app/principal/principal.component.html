@@ -1,0 +1,61 @@
+<nav>
+  <li class="inactive">Courses / </li>
+  <li class="inactive"> Design /</li>
+  <li> Masterclass: Designing for web</li>
+</nav>
+
+<section class="grid">
+  <div class="row">
+    <h2 class="col d-flex align-self-center m-0" >Fundamentals of Web Design</h2>
+    <div class="col d-flex justify-content-end align-items-center">
+      <mat-button-toggle-group value="Next" >
+        <mat-button-toggle value="Previous"> </mat-button-toggle>
+        <mat-button-toggle value="Next" (change)="onNextChapter()"> </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+</section>
+
+<section class="instructor-name">
+  Natalie Storm, Design Department
+</section>
+
+<video class="video-chapter" controls #videoChap (timeupdate)="contando(videoChap.currentTime)">
+  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<mat-tab-group mat-align-tabs="start" [color]="'warn'">
+  <mat-tab label="Notes">
+
+    <section class="grid-about-instruction">
+      <article class="presentation">
+        <p>Hi guys, Natalie here with a very unconventional method that will get you hooked within minutes into this awesome course. As you might be already knowing, web development is the next biggest thing that is going to revolutionize this world.</p>
+
+        <p>With the possibilities sitting wide open, you might be curious how you can get into the bandwagon a little earlier and be a legit expert. This chapter covers the fundamentals of web design.</p>
+      </article>
+      <section class="about">
+        <mat-card>
+          <h3 class="m-0">About Instructor</h3>
+          <div class="d-flex">
+            <img src="../../assets/img/user-photo-instructor.jpg" alt="user photo instructor" class="photo-instructor">
+            <p>
+              Natalie Storm <br>
+              Design Department
+            </p>
+          </div>
+
+          <div>
+            Natalie is a freelance designer who occassionally dabblles along with graphic design, motion and code. She loves beaches...
+          </div>
+        </mat-card>
+      </section>
+    </section>
+  </mat-tab>
+  <mat-tab label="Resource"></mat-tab>
+  <mat-tab label="Quiz(3)"></mat-tab>
+</mat-tab-group>
+
+
+
+

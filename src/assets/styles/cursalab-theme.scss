@@ -15,10 +15,6 @@ $cl-primary-color: (
   700 : #00af97,
   800 : #00a78d,
   900 : #00997d,
-  A100 : #c4fff2,
-  A200 : #91ffe7,
-  A400 : #5effdc,
-  A700 : #45ffd6,
   contrast: (
       50 : #000000,
       100 : #000000,
@@ -30,10 +26,6 @@ $cl-primary-color: (
       700 : #1a1818,
       800 : #211e1e,
       900 : #533c3c,
-      A100 : #000000,
-      A200 : #000000,
-      A400 : #000000,
-      A700 : #000000,
   )
 );
 
@@ -48,10 +40,6 @@ $cl-accent-color: (
     700 : #2d2d37,
     800 : #26262f,
     900 : #191920,
-    A100 : #6767ff,
-    A200 : #3434ff,
-    A400 : #0202ff,
-    A700 : #0000e7,
     contrast: (
         50 : #000000,
         100 : #000000,
@@ -63,22 +51,30 @@ $cl-accent-color: (
         700 : #ffffff,
         800 : #ffffff,
         900 : #ffffff,
-        A100 : #ffffff,
-        A200 : #ffffff,
-        A400 : #ffffff,
-        A700 : #ffffff,
     )
 );
 
 $cl-warn-color: (
-  100: #f2f3fe,
-  200 : #feba80,
-  500 : #fd7400,
-  700 : #fc6100,
+  50 : #eeefff,
+  100 : #d6d7ff,
+  200 : #babdff,
+  300 : #9ea2ff,
+  400 : #8a8eff,
+  500 : #757aff,
+  600 : #6d72ff,
+  700 : #757aff,
+  800 : #585dff,
+  900 : #454aff,
   contrast: (
-    200 : #000000,
-    500 : #000000,
-    700 : #000000,
+      100 : #ffffff,
+      200 : #ffffff,
+      300 : #ffffff,
+      400 : #ffffff,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
   )
 );
 
