@@ -4,16 +4,39 @@
 </section>
 <div *ngFor="let chapter of chapters; index as i" class="chapter-title-container">
   <div class="progress-circle">
-    <app-progress-spinner ></app-progress-spinner>
+    <app-progress-spinner [numChapter]="i+1"></app-progress-spinner>
   </div>
-  <div [ngClass]="'step'">
+  <div [ngClass]="{'step':i === cont}">
     {{chapter.title}}
-  </div>
-
-
-  <div *ngIf="i === cont?chapter:''">
-
   </div>
 </div>
 <mat-divider></mat-divider>
-<hr>
+
+<section>
+  <h3>Discussion</h3>
+  <div class="comentario">
+    <h4>Robin Sherbasky</h4>
+    Cool stuff tutor! I'm wondering where I can find the list of recommended resources..
+    <div class="d-flex">
+      <p class="m-2">Reply</p>
+      <p class="m-2">Show 8 replies</p>
+    </div>
+  </div>
+  <div>
+    <h4>Jason Statham</h4>
+    <h5>Motion in UI </h5>
+    <audio controls>
+      <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+    </audio>
+    <div class="d-flex">
+      <p class="m-2">Reply</p>
+      <p class="m-2">Show 8 replies</p>
+    </div>
+
+    <div class="respuesta">
+        <h4>Natalie Rider</h4>
+        <p>Yeah sure, I have made a pdf with all the links to the resources which she has provided is of outstanding quality</p>
+    </div>
+  </div>
+</section>

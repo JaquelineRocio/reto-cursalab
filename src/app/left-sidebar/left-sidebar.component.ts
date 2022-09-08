@@ -1,21 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit} from '@angular/core';
+import { Chapter } from '../interfaces/chapter';
+import { ChaptersService } from '../services/chapters.service';
+
 
 @Component({
   selector: 'app-left-sidebar',
   templateUrl: './left-sidebar.component.html',
   styleUrls: ['./left-sidebar.component.scss']
 })
-export class LeftSidebarComponent implements OnInit {
-  chapters = [{title: 'What is interaction Design', link: 'https://www.youtube.com/watch?v=k6WYw0WY-PQ'},
-  {title:'Motion in UI Design', link: 'https://www.youtube.com/watch?v=uBXHSlzoino'},
-  {title:'Fundamentals of Web Design', link: ''},
-  {title:'Improving Visual Skills', link: ''},
-  {title:'Finding inspiration', link: ''}]
+export class LeftSidebarComponent implements OnInit{
+  chapters: Array<Chapter> = [{title: '', link:''}]
 
-  cont = 0;
-  constructor() { }
+  constructor(private chaptersService: ChaptersService ) {
+    this.chapters = this.chaptersService.chapters;
+   }
 
   ngOnInit(): void {
   }
 
+  public get cont() {
+    return this.chaptersService.contChapters;
+  }
 }

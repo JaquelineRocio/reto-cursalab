@@ -11,6 +11,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import {MatDividerModule} from '@angular/material/divider';
     MatSidenavModule,
     MatCardModule,
     MatTabsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSliderModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

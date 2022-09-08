@@ -8,9 +8,14 @@
   <div class="row">
     <h1 class="col d-flex align-self-center m-0" >Fundamentals of Web Design</h1>
     <div class="col d-flex justify-content-end align-items-center">
+      <p>Chapter 3 / 5 </p>
       <mat-button-toggle-group value="Next" >
-        <mat-button-toggle value="Previous"> </mat-button-toggle>
-        <mat-button-toggle value="Next" (change)="onNextChapter()"> </mat-button-toggle>
+        <mat-button-toggle value="Previous">
+          <mat-icon aria-hidden="false" aria-label="arror back icon" fontIcon="arrow_back_ios" [color]="'accent'"></mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="Next" (change)="onNextChapter()" [checked]="true" >
+          <mat-icon aria-hidden="false" aria-label="arror forward icon" fontIcon="arrow_forward_ios" [color]="'accent'"></mat-icon>
+        </mat-button-toggle>
       </mat-button-toggle-group>
     </div>
   </div>
@@ -20,10 +25,10 @@
   Natalie Storm, Design Department
 </section>
 
-<video class="video-chapter" controls #videoChap (timeupdate)="contando(videoChap.currentTime)">
-  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-  Your browser does not support the video tag.
+<video [src]="link" controls class="video-chapter" controls #videoChap (timeupdate)="contando(videoChap.currentTime)">
+  Tu navegador no admite el elemento <code>video</code>.
 </video>
+
 
 <mat-tab-group mat-align-tabs="start" [color]="'warn'">
   <mat-tab label="Notes">
