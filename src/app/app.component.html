@@ -1,6 +1,39 @@
 <mat-sidenav-container class="example-container" >
 
-  <mat-sidenav opened mode="side" class="sideStar">Start content</mat-sidenav>
+  <mat-sidenav opened mode="side" class="sideStar">
+    <div class="icon-container">
+      <mat-icon
+      aria-hidden="false"
+      fontIcon="receipt_long"
+      [color]="'accent'"
+      class="m-4"
+      ></mat-icon>
+
+      <mat-icon
+      aria-hidden="false"
+      fontIcon="checklist"
+      [color]="'accent'"
+      class="m-4"
+      ></mat-icon>
+
+      <mat-icon
+      aria-hidden="false"
+      fontIcon="rule"
+      [color]="'accent'"
+      class="m-4"
+      ></mat-icon>
+
+      <mat-icon
+      aria-hidden="false"
+      fontIcon="beenhere"
+      [color]="'accent'"
+      class="m-4"
+      ></mat-icon>
+    </div>
+
+
+
+  </mat-sidenav>
 
   <mat-sidenav opened mode="side" position="end" class="sideEnd">
     <app-left-sidebar></app-left-sidebar>

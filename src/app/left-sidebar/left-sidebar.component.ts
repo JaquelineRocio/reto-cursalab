@@ -32,6 +32,9 @@ export class LeftSidebarComponent implements OnInit{
     return this.chaptersService.videoEnded;
   }
 
-
+  changeChapter(indice: number){
+    this.chaptersService.contChapters = indice;
+    console.log('k')
+  }
 
 }

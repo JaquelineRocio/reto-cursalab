@@ -7,8 +7,14 @@
   background-color: #1F2129;
 }
 .sideStar{
-  background-color: #191A21;
-  color: white
+
+  background-color: #2A2B36;
+}
+.icon-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .sideEnd{
   background-color: #2A2B36;

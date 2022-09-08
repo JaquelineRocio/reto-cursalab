@@ -12,8 +12,11 @@
   <div [ngClass]="{
     'step':chapter.activated,
     'completed': chapter.completed,
-    'block': !chapter.activated
-    }">
+    'block': !chapter.activated,
+    'cursor': chapter.activated
+    }"
+    (click)="changeChapter(i)"
+    >
     {{chapter.title}}
   </div>
 
@@ -50,7 +53,7 @@
   <div>
     <h4>Jason Statham</h4>
     <h5>Motion in UI </h5>
-    <audio controls>
+    <audio controls class="audio-res">
       <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
     Your browser does not support the audio element.
     </audio>

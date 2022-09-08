@@ -37,3 +37,12 @@ background-color: white;
 .block{
   color: white;
 }
+.cursor{
+  cursor: pointer;
+}
+audio::-webkit-media-controls-panel
+{
+  background-color: #353640;
+  border: none;
+}
+
