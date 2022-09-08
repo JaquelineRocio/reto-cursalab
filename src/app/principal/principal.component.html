@@ -8,9 +8,9 @@
   <div class="row">
     <h1 class="col d-flex align-self-center m-0" >Fundamentals of Web Design</h1>
     <div class="col d-flex justify-content-end align-items-center">
-      <p>Chapter 3 / 5 </p>
-      <mat-button-toggle-group value="Next" >
-        <mat-button-toggle value="Previous">
+      <p>CHAPTER {{cont+1}} / 5 </p>
+      <mat-button-toggle-group >
+        <mat-button-toggle value="Back" (change)="onBackChapter()">
           <mat-icon aria-hidden="false" aria-label="arror back icon" fontIcon="arrow_back_ios" [color]="'accent'"></mat-icon>
         </mat-button-toggle>
         <mat-button-toggle value="Next" (change)="onNextChapter()" [checked]="true" >
@@ -26,14 +26,14 @@
 </section>
 
 <video
-[src]="link"
-controls
-class="video-chapter"
-controls
-#videoChap
-(timeupdate)="contando(videoChap.currentTime)"
-(ended)="isVideoEnded()"
->
+  [src]="link"
+  controls
+  class="video-chapter"
+  controls
+  #videoChap
+  (timeupdate)="contando(videoChap.currentTime)"
+  (ended)="isVideoEnded()"
+  >
   Tu navegador no admite el elemento <code>video</code>.
 </video>
 

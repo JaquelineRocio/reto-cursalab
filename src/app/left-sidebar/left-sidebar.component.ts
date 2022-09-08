@@ -9,13 +9,16 @@ import { ChaptersService } from '../services/chapters.service';
   styleUrls: ['./left-sidebar.component.scss']
 })
 export class LeftSidebarComponent implements OnInit{
-  chapters: Array<Chapter> = [{title: '', link:''}]
+  chapters: Array<Chapter> = [{title: '', link:'', completed: false, activated: false}]
 
   constructor(private chaptersService: ChaptersService ) {
-    this.chapters = this.chaptersService.chapters;
+
    }
 
   ngOnInit(): void {
+    this.chaptersService.getChapters().subscribe(chapters => {
+      this.chapters = chapters
+    })
   }
 
   public get cont() {
@@ -28,4 +31,7 @@ export class LeftSidebarComponent implements OnInit{
   public get videoEnded(){
     return this.chaptersService.videoEnded;
   }
+
+
+
 }

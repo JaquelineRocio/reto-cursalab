@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "reto-cursalab": {
+      "hosting": {
+        "reto-cursalab": [
+          "reto-cursalab"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "reto-cursalab"
+  }
+}

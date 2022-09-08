@@ -9,8 +9,30 @@
     [valueProgress] = "i === cont?valueProgressSpinner:0">
   </app-progress-spinner>
   </div>
-  <div [ngClass]="{'step':i === cont, 'completed': videoEnded&&i === cont}">
+  <div [ngClass]="{
+    'step':chapter.activated,
+    'completed': chapter.completed,
+    'block': !chapter.activated
+    }">
     {{chapter.title}}
+  </div>
+
+  <div *ngIf="!chapter.activated">
+    <mat-icon
+    aria-hidden="false"
+    aria-label="lock icon"
+    fontIcon="lock"
+    [color]="'accent'"></mat-icon>
+
+  </div>
+
+  <div *ngIf="chapter.completed">
+    <mat-icon
+    aria-hidden="false"
+    aria-label="done icon"
+    fontIcon="done"
+    [color]="'accent'"></mat-icon>
+
   </div>
 </div>
 <mat-divider></mat-divider>

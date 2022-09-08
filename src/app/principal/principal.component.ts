@@ -11,37 +11,44 @@ import { ChaptersService } from '../services/chapters.service';
 export class PrincipalComponent implements OnInit {
   colorTab: ThemePalette = 'warn'
   value = 0;
-  chapters: Array<Chapter> = [{title: '', link:''}]
+  chapters: Array<Chapter> = [{title: '', link:'', completed: false, activated: false}]
   videoEnded = false;
 
-  onNextChapter(){
-    this.chaptersService.addCont();
 
-    console.log(this.chaptersService.contChapters)
-    if(this.chaptersService.contChapters === this.chapters.length)
-    this.chaptersService.contChapters = 0;
+  onNextChapter(){
+    if(this.chaptersService.chapters[this.cont].completed)
+      this.chaptersService.contChapters ++;
     this.value = 0;
   }
+  onBackChapter(){
+    if(this.chaptersService.chapters[this.cont-1].completed)
+      this.chaptersService.contChapters--;
 
+  }
   contando(videochap: any){
     this.chaptersService.valueProgressSpinner = videochap*10;
   }
   constructor(private chaptersService: ChaptersService ) {
-    this.chapters = this.chaptersService.chapters;
    }
 
   ngOnInit(): void {
+    this.chaptersService.getChapters().subscribe(chapters => {
+      this.chapters = chapters
+    })
   }
   public get cont() {
     return this.chaptersService.contChapters;
   }
 
   public get link(){
-    return this.chaptersService.chapters[this.cont].link;
+      console.log(this.chaptersService.chapters[this.cont].link)
+      return this.chaptersService.chapters[this.cont].link;
   }
 
   isVideoEnded(){
-    this.chaptersService.videoEnded = true;
-    console.log(this.chaptersService.videoEnded)
+    let id = this.cont;
+    console.log(this.cont);
+    this.chaptersService.updateCompleted(String(id))
+    this.chaptersService.updateActived(String(id+1))
   }
 }
