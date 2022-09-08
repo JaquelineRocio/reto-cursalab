@@ -8,7 +8,7 @@ import { ThemePalette } from '@angular/material/core';
 })
 export class ProgressSpinnerComponent implements OnInit {
   @Input() numChapter = 0;
-
+  @Input() valueProgress = 0;
   defaultColor: ThemePalette = 'accent';
 
 

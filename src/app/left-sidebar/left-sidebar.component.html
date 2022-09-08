@@ -4,7 +4,7 @@
 </section>
 <div *ngFor="let chapter of chapters; index as i" class="chapter-title-container">
   <div class="progress-circle">
-    <app-progress-spinner [numChapter]="i+1"></app-progress-spinner>
+    <app-progress-spinner [numChapter]="i+1" [valueProgress] = "i === cont?valueProgressSpinner:0"></app-progress-spinner>
   </div>
   <div [ngClass]="{'step':i === cont}">
     {{chapter.title}}

@@ -21,4 +21,7 @@ export class LeftSidebarComponent implements OnInit{
   public get cont() {
     return this.chaptersService.contChapters;
   }
+  public get valueProgressSpinner(){
+    return this.chaptersService.valueProgressSpinner;
+  }
 }

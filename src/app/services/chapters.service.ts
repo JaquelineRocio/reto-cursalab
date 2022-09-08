@@ -9,7 +9,7 @@ export class ChaptersService {
   {title:'Fundamentals of Web Design', link: ''},
   {title:'Improving Visual Skills', link: ''},
   {title:'Finding inspiration', link: ''}]
-
+  valueProgressSpinner: any;
   public contChapters = 0
   constructor() { }
 
