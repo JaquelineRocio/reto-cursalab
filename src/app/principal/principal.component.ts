@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'app-principal',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./principal.component.scss']
 })
 export class PrincipalComponent implements OnInit {
+  colorTab: ThemePalette = 'warn'
   value = 0;
   cont = 0;
   chapters=[]

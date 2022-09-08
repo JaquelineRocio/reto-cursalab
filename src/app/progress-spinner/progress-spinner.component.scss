@@ -1,6 +1,15 @@
 .secondarySpinner{
   position: relative;
-  top: -40px;
+  bottom: 30px;
   left: 0px;
   z-index: -1;
 }
+*{
+  color: white;
+}
+.num{
+  position: relative;
+  bottom: 55px;
+  left: 12px;
+}
+

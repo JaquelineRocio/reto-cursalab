@@ -1,6 +1,6 @@
 *{
   color: white;
-  font-size: 11px;
+  font-size: 14px;
 }
 .photo-instructor{
   width: 40px;
@@ -42,8 +42,6 @@ li{
 ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
   color:#ffff;
   }
-
-div.mat-tab-label-content{
-  color:blue;
-  }
-
+::ng-deep  .mat-tab-label-content {
+    color: white;
+}

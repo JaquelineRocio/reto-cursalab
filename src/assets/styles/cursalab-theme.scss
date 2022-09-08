@@ -1,98 +1,17 @@
-@import '~@angular/material/theming';
+@use '@angular/material' as mat;
 
-@include mat-core();
+@include mat.core();
 
+$my-primary: mat.define-palette(mat.$teal-palette, 500);
+$my-accent: mat.define-palette(mat.$gray-palette, 700, A100, A400);
+$my-warn: mat.define-palette(mat.$deep-purple-palette, 500, 100, 100);
 
-// GAMA COLORES
-$cl-primary-color: (
-  50 : #e0f7f5,
-  100 : #b3ece5,
-  200 : #80dfd4,
-  300 : #4dd2c2,
-  400 : #26c8b5,
-  500 : #00bea8,
-  600 : #00b8a0,
-  700 : #00af97,
-  800 : #00a78d,
-  900 : #00997d,
-  contrast: (
-      50 : #000000,
-      100 : #000000,
-      200 : #000000,
-      300 : #000000,
-      400 : #000000,
-      500 : #000000,
-      600 : #201b1b,
-      700 : #1a1818,
-      800 : #211e1e,
-      900 : #533c3c,
-  )
-);
-
-$cl-accent-color: (
-  50 : #e7e7e9,
-    100 : #c4c4c8,
-    200 : #9d9da3,
-    300 : #76767e,
-    400 : #585863,
-    500 : #3b3b47,
-    600 : #353540,
-    700 : #2d2d37,
-    800 : #26262f,
-    900 : #191920,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #ffffff,
-        400 : #ffffff,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-    )
-);
-
-$cl-warn-color: (
-  50 : #eeefff,
-  100 : #d6d7ff,
-  200 : #babdff,
-  300 : #9ea2ff,
-  400 : #8a8eff,
-  500 : #757aff,
-  600 : #6d72ff,
-  700 : #757aff,
-  800 : #585dff,
-  900 : #454aff,
-  contrast: (
-      100 : #ffffff,
-      200 : #ffffff,
-      300 : #ffffff,
-      400 : #ffffff,
-      500 : #ffffff,
-      600 : #ffffff,
-      700 : #ffffff,
-      800 : #ffffff,
-      900 : #ffffff,
-  )
-);
-
-// PALETA DE COLORES
-$cl-palette-primary: mat-palette($cl-primary-color);
-$cl-palette-accent: mat-palette($cl-accent-color);
-$cl-palette-warn: mat-palette($cl-warn-color);
-
-// TEMA PROPIO
-$cl-theme: mat-light-theme((
+$my-theme: mat.define-light-theme((
  color: (
-   primary: $cl-palette-primary,
-   accent: $cl-palette-accent,
-   warn: $cl-palette-warn
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn
  )
 ));
 
-// APLICAR NUESTRO TEMA A ANGULAR
-@include angular-material-theme($cl-theme);
-
-
+@include mat.all-component-themes($my-theme);

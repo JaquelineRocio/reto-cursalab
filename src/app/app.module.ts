@@ -9,12 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PrincipalComponent } from './principal/principal.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
+import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProgressSpinnerComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    LeftSidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatProgressSpinnerModule,
     MatSidenavModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

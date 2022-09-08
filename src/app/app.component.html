@@ -3,13 +3,7 @@
   <mat-sidenav opened mode="side" class="sideStar">Start content</mat-sidenav>
 
   <mat-sidenav opened mode="side" position="end" class="sideEnd">
-    <div *ngFor="let chapter of chapters; index as i">
-      <div [ngClass]="'step'">{{chapter.title}}</div>
-      <app-progress-spinner></app-progress-spinner>
-      <div *ngIf="i === cont?chapter:''">
-
-      </div>
-    </div>
+    <app-left-sidebar></app-left-sidebar>
   </mat-sidenav>
 <main>
   <app-principal></app-principal>

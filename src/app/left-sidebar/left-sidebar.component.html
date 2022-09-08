@@ -1,0 +1,19 @@
+<h2 class="text-center">MasterClass: Designing for web</h2>
+<section>
+  2/5 COMPLETED
+</section>
+<div *ngFor="let chapter of chapters; index as i" class="chapter-title-container">
+  <div class="progress-circle">
+    <app-progress-spinner ></app-progress-spinner>
+  </div>
+  <div [ngClass]="'step'">
+    {{chapter.title}}
+  </div>
+
+
+  <div *ngIf="i === cont?chapter:''">
+
+  </div>
+</div>
+<mat-divider></mat-divider>
+<hr>
