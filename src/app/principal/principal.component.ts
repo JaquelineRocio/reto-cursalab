@@ -12,6 +12,7 @@ export class PrincipalComponent implements OnInit {
   colorTab: ThemePalette = 'warn'
   value = 0;
   chapters: Array<Chapter> = [{title: '', link:''}]
+  videoEnded = false;
 
   onNextChapter(){
     this.chaptersService.addCont();
@@ -37,5 +38,10 @@ export class PrincipalComponent implements OnInit {
 
   public get link(){
     return this.chaptersService.chapters[this.cont].link;
+  }
+
+  isVideoEnded(){
+    this.chaptersService.videoEnded = true;
+    console.log(this.chaptersService.videoEnded)
   }
 }

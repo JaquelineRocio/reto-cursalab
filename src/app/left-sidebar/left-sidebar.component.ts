@@ -24,4 +24,8 @@ export class LeftSidebarComponent implements OnInit{
   public get valueProgressSpinner(){
     return this.chaptersService.valueProgressSpinner;
   }
+
+  public get videoEnded(){
+    return this.chaptersService.videoEnded;
+  }
 }

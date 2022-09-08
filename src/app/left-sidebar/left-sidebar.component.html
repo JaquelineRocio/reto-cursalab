@@ -4,9 +4,12 @@
 </section>
 <div *ngFor="let chapter of chapters; index as i" class="chapter-title-container">
   <div class="progress-circle">
-    <app-progress-spinner [numChapter]="i+1" [valueProgress] = "i === cont?valueProgressSpinner:0"></app-progress-spinner>
+    <app-progress-spinner
+    [numChapter]="i+1"
+    [valueProgress] = "i === cont?valueProgressSpinner:0">
+  </app-progress-spinner>
   </div>
-  <div [ngClass]="{'step':i === cont}">
+  <div [ngClass]="{'step':i === cont, 'completed': videoEnded&&i === cont}">
     {{chapter.title}}
   </div>
 </div>

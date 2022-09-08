@@ -11,6 +11,8 @@ export class ChaptersService {
   {title:'Finding inspiration', link: ''}]
   valueProgressSpinner: any;
   public contChapters = 0
+  videoEnded = false;
+
   constructor() { }
 
   addCont(){

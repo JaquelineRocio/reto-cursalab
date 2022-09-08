@@ -25,7 +25,15 @@
   Natalie Storm, Design Department
 </section>
 
-<video [src]="link" controls class="video-chapter" controls #videoChap (timeupdate)="contando(videoChap.currentTime)">
+<video
+[src]="link"
+controls
+class="video-chapter"
+controls
+#videoChap
+(timeupdate)="contando(videoChap.currentTime)"
+(ended)="isVideoEnded()"
+>
   Tu navegador no admite el elemento <code>video</code>.
 </video>
 
