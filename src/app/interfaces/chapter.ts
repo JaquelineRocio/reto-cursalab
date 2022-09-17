@@ -3,4 +3,5 @@ export interface Chapter {
   link: string;
   completed: boolean;
   activated: boolean;
+  timeVideo: number;
 }

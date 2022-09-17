@@ -7,9 +7,9 @@ import { Chapter } from '../interfaces/chapter';
   providedIn: 'root'
 })
 export class ChaptersService {
-  chapters: Array<Chapter>=[{title: '', link: '', completed: false, activated: false}]
+  chapters: Array<Chapter>=[{title: '', link: '', completed: false, activated: false, timeVideo: 0}]
   valueProgressSpinner: any;
-  public contChapters = 0
+  contChapters = 0
   videoEnded = false;
 
   constructor(private firestore: Firestore) {
@@ -22,15 +22,22 @@ export class ChaptersService {
 
     return collectionData(chapterRef, {idField: 'id'}) as Observable<Chapter[]>
   }
-  updateCompleted(id: string){
+  async updateCompleted(id: string){
     const chapterRef = doc(this.firestore,'chapters', id)
-    updateDoc(chapterRef, {completed: true })
+    await updateDoc(chapterRef, {completed: true })
   }
-  updateActived(id: string){
+  async updateActived(id: string){
     const chapterRef = doc(this.firestore,'chapters', id)
-    updateDoc(chapterRef, {activated: true })
+    await updateDoc(chapterRef, {activated: true })
+  }
+  async updateValueTime(id: string, value: number){
+    const chapterRef = doc(this.firestore,'chapters', id)
+    await updateDoc(chapterRef, {timeVideo:  value})
   }
   addCont(){
       this.contChapters++;
+  }
+  activateVideo(){
+
   }
 }

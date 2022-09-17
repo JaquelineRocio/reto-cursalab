@@ -1,32 +1,40 @@
-<nav>
+<nav id="nav-main">
   <li class="inactive">Courses / </li>
   <li class="inactive"> Design /</li>
   <li> Masterclass: Designing for web</li>
 </nav>
 
-<section class="grid">
-  <div class="row">
-    <h1 class="col d-flex align-self-center m-0" >Fundamentals of Web Design</h1>
-    <div class="col d-flex justify-content-end align-items-center">
-      <p>CHAPTER {{cont+1}} / 5 </p>
-      <mat-button-toggle-group >
-        <mat-button-toggle value="Back" (change)="onBackChapter()">
-          <mat-icon aria-hidden="false" aria-label="arror back icon" fontIcon="arrow_back_ios" [color]="'accent'"></mat-icon>
-        </mat-button-toggle>
-        <mat-button-toggle value="Next" (change)="onNextChapter()" [checked]="true" >
-          <mat-icon aria-hidden="false" aria-label="arror forward icon" fontIcon="arrow_forward_ios" [color]="'accent'"></mat-icon>
-        </mat-button-toggle>
-      </mat-button-toggle-group>
+<section class="grid-title">
+    <h1 class="title-curse" >
+
+          Fundamentals of Web Design
+          <section class="instructor-name">
+            Natalie Storm, Design Department
+          </section>
+    </h1>
+    <br>
+    <p class="cont-chapter">CHAPTER {{cont+1}} / 5 </p>
+
+    <div class="buttons-control">
+      <button class="controlButton back" value="Back" (click)="onBackChapter()">
+        <mat-icon class="icon-arrow" aria-hidden="false" aria-label="arror back icon" fontIcon="arrow_back_ios" [color]="'accent'"></mat-icon>
+      </button>
+      <button
+        class="controlButton next"
+        value="Next"
+        (click)="onNextChapter()"
+        autofocus
+        >
+        <mat-icon
+        class="icon-arrow"
+        aria-hidden="false" aria-label="arror forward icon" fontIcon="arrow_forward_ios" [color]="'accent'"></mat-icon>
+      </button>
     </div>
-  </div>
 </section>
 
-<section class="instructor-name">
-  Natalie Storm, Design Department
-</section>
 
 <video
-  [src]="link"
+  [src]="chapters[cont].link"
   controls
   class="video-chapter"
   controls
@@ -36,6 +44,28 @@
   >
   Tu navegador no admite el elemento <code>video</code>.
 </video>
+<cdk-accordion class="example-accordion">
+  <cdk-accordion-item
+    #accordionItem="cdkAccordionItem"
+    class="example-accordion-item"
+    role="button"
+    tabindex="0">
+    <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+      {{ chapters[cont].title}}
+
+    </div>
+    <div
+      class="example-accordion-item-body"
+      role="region"
+      [style.display]="accordionItem.expanded ? '' : 'none'"
+      [attr.id]="'accordion-body-' + cont"
+      [attr.aria-labelledby]="'accordion-header-' + cont">
+      <app-list-chapter></app-list-chapter>
+    </div>
+  </cdk-accordion-item>
+</cdk-accordion>
+
+
 
 
 <mat-tab-group mat-align-tabs="start" [color]="'warn'">
@@ -53,6 +83,7 @@
           <div class="d-flex">
             <img src="../../assets/img/user-photo-instructor.jpg" alt="user photo instructor" class="photo-instructor">
             <p>
+              {{sizeScreen}}
               Natalie Storm <br>
               Design Department
             </p>
@@ -65,8 +96,12 @@
       </section>
     </section>
   </mat-tab>
+  <mat-tab label="Discussion" *ngIf="sizeScreen!='XLarge'&&sizeScreen!='Large'">
+    <app-discussion></app-discussion>
+  </mat-tab>
   <mat-tab label="Resource"></mat-tab>
   <mat-tab label="Quiz(3)"></mat-tab>
+
 </mat-tab-group>
 
 

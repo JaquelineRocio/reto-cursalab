@@ -16,13 +16,19 @@ import {MatIconModule} from '@angular/material/icon';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import {LayoutModule} from '@angular/cdk/layout';
+import { ListChapterComponent } from './list-chapter/list-chapter.component';
+import {CdkAccordionModule} from '@angular/cdk/accordion';
+import { DiscussionComponent } from './discussion/discussion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProgressSpinnerComponent,
     PrincipalComponent,
-    LeftSidebarComponent
+    LeftSidebarComponent,
+    ListChapterComponent,
+    DiscussionComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +41,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     MatDividerModule,
     MatSliderModule,
     MatIconModule,
+    LayoutModule,
+    CdkAccordionModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
   ],

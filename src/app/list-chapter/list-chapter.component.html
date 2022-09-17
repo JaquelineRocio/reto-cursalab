@@ -1,0 +1,39 @@
+<section>
+  2/5 COMPLETED
+</section>
+<div *ngFor="let chapter of chapters; index as i" class="chapter-title-container">
+  <div class="progress-circle">
+    <app-progress-spinner
+    [numChapter]="i+1"
+    [valueProgress] = "i === cont && chapter.completed!== true?valueProgressSpinner:chapter.timeVideo">
+  </app-progress-spinner>
+  </div>
+  <div [ngClass]="{
+    'step':chapter.activated,
+    'completed': chapter.completed,
+    'block': !chapter.activated,
+    'cursor': chapter.activated
+    }"
+    (click)="chapter.activated?changeChapter(i):''"
+    >
+    {{chapter.title}}
+  </div>
+
+  <div *ngIf="!chapter.activated">
+    <mat-icon
+    aria-hidden="false"
+    aria-label="lock icon"
+    fontIcon="lock"
+    [color]="'accent'"></mat-icon>
+
+  </div>
+
+  <div *ngIf="chapter.completed">
+    <mat-icon
+    aria-hidden="false"
+    aria-label="done icon"
+    fontIcon="done"
+    [color]="'accent'"></mat-icon>
+
+  </div>
+</div>

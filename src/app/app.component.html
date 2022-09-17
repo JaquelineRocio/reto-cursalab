@@ -1,6 +1,6 @@
 <mat-sidenav-container class="example-container" >
 
-  <mat-sidenav opened mode="side" class="sideStar">
+  <mat-sidenav opened mode="side" class="sideStar" *ngIf="currentScreenSize=='Large' || currentScreenSize=='XLarge'">
     <div class="icon-container">
       <mat-icon
       aria-hidden="false"
@@ -35,11 +35,13 @@
 
   </mat-sidenav>
 
-  <mat-sidenav opened mode="side" position="end" class="sideEnd">
+  <mat-sidenav opened mode="side" position="end" class="sideEnd"
+    *ngIf="currentScreenSize=='Large' || currentScreenSize=='XLarge'">
     <app-left-sidebar></app-left-sidebar>
   </mat-sidenav>
-<main>
-  <app-principal class="container"></app-principal>
+
+<main class="large-main">
+  <app-principal class="container" [sizeScreen]="currentScreenSize"></app-principal>
 </main>
 
 

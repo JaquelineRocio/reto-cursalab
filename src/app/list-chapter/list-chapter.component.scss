@@ -1,0 +1,31 @@
+.step{
+  color: #42C9B7
+}
+.progress-circle{
+  margin-top: 20px;
+  margin-right: 10px;
+  position: relative;
+  top: 20px;
+}
+.chapter-title-container{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 50px;
+}
+hr{
+background-color: white;
+  border-color: white;
+  border: 90px;
+}
+.completed{
+  text-decoration:line-through;
+}
+
+.block{
+  color: white;
+}
+.cursor{
+  cursor: pointer;
+}
+

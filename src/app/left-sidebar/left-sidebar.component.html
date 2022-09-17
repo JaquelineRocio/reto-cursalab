@@ -1,70 +1,8 @@
 <h2 class="text-center">MasterClass: Designing for web</h2>
-<section>
-  2/5 COMPLETED
-</section>
-<div *ngFor="let chapter of chapters; index as i" class="chapter-title-container">
-  <div class="progress-circle">
-    <app-progress-spinner
-    [numChapter]="i+1"
-    [valueProgress] = "i === cont?valueProgressSpinner:0">
-  </app-progress-spinner>
-  </div>
-  <div [ngClass]="{
-    'step':chapter.activated,
-    'completed': chapter.completed,
-    'block': !chapter.activated,
-    'cursor': chapter.activated
-    }"
-    (click)="changeChapter(i)"
-    >
-    {{chapter.title}}
-  </div>
+<app-list-chapter></app-list-chapter>
 
-  <div *ngIf="!chapter.activated">
-    <mat-icon
-    aria-hidden="false"
-    aria-label="lock icon"
-    fontIcon="lock"
-    [color]="'accent'"></mat-icon>
-
-  </div>
-
-  <div *ngIf="chapter.completed">
-    <mat-icon
-    aria-hidden="false"
-    aria-label="done icon"
-    fontIcon="done"
-    [color]="'accent'"></mat-icon>
-
-  </div>
-</div>
 <mat-divider></mat-divider>
 
 <section>
-  <h3>Discussion</h3>
-  <div class="comentario">
-    <h4>Robin Sherbasky</h4>
-    Cool stuff tutor! I'm wondering where I can find the list of recommended resources..
-    <div class="d-flex">
-      <p class="m-2">Reply</p>
-      <p class="m-2">Show 8 replies</p>
-    </div>
-  </div>
-  <div>
-    <h4>Jason Statham</h4>
-    <h5>Motion in UI </h5>
-    <audio controls class="audio-res">
-      <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-    </audio>
-    <div class="d-flex">
-      <p class="m-2">Reply</p>
-      <p class="m-2">Show 8 replies</p>
-    </div>
-
-    <div class="respuesta">
-        <h4>Natalie Rider</h4>
-        <p>Yeah sure, I have made a pdf with all the links to the resources which she has provided is of outstanding quality</p>
-    </div>
-  </div>
+  <app-discussion></app-discussion>
 </section>

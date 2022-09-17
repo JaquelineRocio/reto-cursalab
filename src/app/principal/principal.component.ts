@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { Chapter } from '../interfaces/chapter';
 import { ChaptersService } from '../services/chapters.service';
@@ -9,16 +9,16 @@ import { ChaptersService } from '../services/chapters.service';
   styleUrls: ['./principal.component.scss']
 })
 export class PrincipalComponent implements OnInit {
+  @Input() sizeScreen: String = 'Large';
   colorTab: ThemePalette = 'warn'
-  value = 0;
-  chapters: Array<Chapter> = [{title: '', link:'', completed: false, activated: false}]
-  videoEnded = false;
-
+  chapters: Array<Chapter> = [{title: '', link:'', completed: false, activated: false, timeVideo:0}]
 
   onNextChapter(){
     if(this.chaptersService.chapters[this.cont].completed)
+    {
       this.chaptersService.contChapters ++;
-    this.value = 0;
+    }
+
   }
   onBackChapter(){
     if(this.chaptersService.chapters[this.cont-1].completed)
@@ -41,14 +41,21 @@ export class PrincipalComponent implements OnInit {
   }
 
   public get link(){
-      console.log(this.chaptersService.chapters[this.cont].link)
       return this.chaptersService.chapters[this.cont].link;
   }
+  public get nextLink(){
 
-  isVideoEnded(){
+    return this.chaptersService.chapters[this.cont+1].link;
+}
+
+  async isVideoEnded(){
     let id = this.cont;
-    console.log(this.cont);
-    this.chaptersService.updateCompleted(String(id))
-    this.chaptersService.updateActived(String(id+1))
+    await this.chaptersService.updateCompleted(String(id))
+    await this.chaptersService.updateValueTime(String(id),100)
+    if(this.cont<this.chapters.length-1)
+    {
+      await this.chaptersService.updateActived(String(id+1))
+      this.onNextChapter()
+    }
   }
 }
