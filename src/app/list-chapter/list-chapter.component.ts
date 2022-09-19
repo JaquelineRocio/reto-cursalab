@@ -43,4 +43,17 @@ public get videoEnded(){
 changeChapter(indice: number){
   this.chaptersService.contChapters = indice;
 }
+
+get chaptersCompleted(){
+  let cont=0
+for (let  element of this.chapters)
+  {
+    if(element.completed)
+    {
+      cont+=1
+    }
+  }
+
+  return cont;
+}
 }

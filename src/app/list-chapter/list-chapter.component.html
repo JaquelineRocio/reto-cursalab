@@ -1,5 +1,5 @@
 <section>
-  <p class="cont-tab">2 / 5 CHAPTER</p>
+  <p class="cont-tab">{{chaptersCompleted}} / 5 CHAPTER</p>
   <div class="tabs-container" >
     <div *ngFor="let chapter of chapters" >
       <div [class]="chapter.completed?'tab-chapter-completed':'tab-chapter-incompleted'"> </div>

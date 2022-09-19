@@ -31,7 +31,7 @@ export class PrincipalComponent implements OnInit {
 
   }
   contando(videochap: any){
-    this.chaptersService.valueProgressSpinner = videochap*10;
+    this.chaptersService.valueProgressSpinner = videochap*5;
   }
   constructor(private chaptersService: ChaptersService ) {
    }
