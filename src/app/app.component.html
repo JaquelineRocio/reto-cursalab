@@ -1,7 +1,12 @@
 <mat-sidenav-container class="example-container" >
+  <mat-drawer-container class="example-container" [hasBackdrop]="!isLarge()" >
+    <mat-drawer #drawer [mode]="isLarge()?'push':'over'"
+    [opened]="isLarge()"
 
-  <mat-sidenav opened mode="side" class="sideStar" *ngIf="currentScreenSize=='Large' || currentScreenSize=='XLarge'">
+    >
+
     <div class="icon-container">
+      <img src="../assets/img/logo.png" alt="logo" id="logo">
       <mat-icon
       aria-hidden="false"
       fontIcon="receipt_long"
@@ -9,40 +14,51 @@
       class="m-4"
       ></mat-icon>
 
+      <div class="icon-div">
+        <mat-icon
+        aria-hidden="false"
+        fontIcon="book"
+        [color]="'accent'"
+        class="m-4 selected"
+        ></mat-icon>
+      </div>
+
+
       <mat-icon
       aria-hidden="false"
-      fontIcon="checklist"
+      fontIcon="calendar_today"
       [color]="'accent'"
       class="m-4"
       ></mat-icon>
 
       <mat-icon
       aria-hidden="false"
-      fontIcon="rule"
+      fontIcon="forum"
       [color]="'accent'"
       class="m-4"
       ></mat-icon>
-
       <mat-icon
       aria-hidden="false"
-      fontIcon="beenhere"
+      fontIcon="workspace_premium"
       [color]="'accent'"
       class="m-4"
       ></mat-icon>
     </div>
+  </mat-drawer>
+    <mat-drawer-content>
+      <main [class]="isLarge()?'large-main':'small-main'">
+        <app-principal class="container" [isLarge]="isLarge()" [sizeScreen]="currentScreenSize" (button_menu_event)="drawer.toggle()"></app-principal>
+      </main>
 
-
-
-  </mat-sidenav>
+    </mat-drawer-content>
+  </mat-drawer-container>
 
   <mat-sidenav opened mode="side" position="end" class="sideEnd"
     *ngIf="currentScreenSize=='Large' || currentScreenSize=='XLarge'">
     <app-left-sidebar></app-left-sidebar>
   </mat-sidenav>
 
-<main class="large-main">
-  <app-principal class="container" [sizeScreen]="currentScreenSize"></app-principal>
-</main>
+
 
 
 </mat-sidenav-container>

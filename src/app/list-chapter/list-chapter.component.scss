@@ -28,4 +28,20 @@ background-color: white;
 .cursor{
   cursor: pointer;
 }
+.tabs-container{
+  display: flex;
 
+}
+.tab-chapter-completed{
+  margin: 1px;
+  width: 60px;
+  border-bottom: 4px solid  #42C9B7;
+}
+.tab-chapter-incompleted{
+  margin: 1px;
+  width: 60px;
+  border-bottom: 4px solid #2E494E;
+}
+.cont-tab{
+  color: #42C9B7;
+}

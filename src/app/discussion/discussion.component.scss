@@ -1,10 +1,57 @@
+$sizeAudio: 40px;
 .respuesta{
   margin-left: 30px;
   border-left: 3px solid #353542;
   padding-left: 20px;
 }
-audio::-webkit-media-controls-panel
-{
-  background-color: #353640;
+.button-play{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: $sizeAudio;
+  width: $sizeAudio;
   border: none;
+  background-color: #757AFF
+}
+
+.audio-container{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  height: $sizeAudio+20px;
+  background-color: #353640;
+}
+.slider-audio{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+}
+h4,h3{
+  font-weight:500;
+}
+.reply{
+  display: flex;
+
+  align-items: center;
+}
+.point{
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: #353640;
+}
+.user-photo{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.name-img{
+  display: flex;
+  align-items: center;
+}
+.name{
+  margin: 10px;
 }

@@ -20,6 +20,7 @@ import {LayoutModule} from '@angular/cdk/layout';
 import { ListChapterComponent } from './list-chapter/list-chapter.component';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import { DiscussionComponent } from './discussion/discussion.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { DiscussionComponent } from './discussion/discussion.component';
     MatIconModule,
     LayoutModule,
     CdkAccordionModule,
+    FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
   ],

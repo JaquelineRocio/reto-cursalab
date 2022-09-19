@@ -10,6 +10,10 @@
     height: 0;
   }
 }
+
+::ng-deep .mat-drawer-inner-container.ng-tns-c67-0{
+  background: #191A21;
+}
 ::ng-deep mat-sidenav-content.mat-drawer-content.mat-sidenav-content.ng-star-inserted{
   overflow: auto;
   z-index: 0;
@@ -36,6 +40,7 @@
   background-color: #2A2B36;
 }
 .icon-container{
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,7 +53,17 @@
   padding: 30px;
 }
 .large-main{
-  margin: 1% 5%;
+  margin: 1% 10% 1% 5%;
   overflow-y: none;
 }
-
+.small-main{
+  margin: 1% 10%;
+  overflow-y: none;
+}
+#logo{
+  margin:15px 15px 35px 15px
+}
+.icon-div{
+  width: 100%;
+  border-right: 3px solid #757AFF;
+}

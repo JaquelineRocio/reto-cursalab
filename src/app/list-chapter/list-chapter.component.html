@@ -1,5 +1,11 @@
 <section>
-  2/5 COMPLETED
+  <p class="cont-tab">2 / 5 CHAPTER</p>
+  <div class="tabs-container" >
+    <div *ngFor="let chapter of chapters" >
+      <div [class]="chapter.completed?'tab-chapter-completed':'tab-chapter-incompleted'"> </div>
+    </div>
+  </div>
+
 </section>
 <div *ngFor="let chapter of chapters; index as i" class="chapter-title-container">
   <div class="progress-circle">

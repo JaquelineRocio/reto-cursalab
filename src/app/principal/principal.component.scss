@@ -59,23 +59,24 @@ li{
 .controlButton{
   background-color: #31333C;
   border: none;
-  padding: 15% 15% 0% 15%;
+  padding: 10px;
+  padding-top: 15px;
 }
 .controlButton.back{
   border-radius: 45% 0 0 45%;
-  height: 100%;
+  width: 50px;
+  height: 40px;
 }
 .controlButton.next{
   border-radius: 0 45% 45% 0;
-  height: 100%;
+  background-color: #757AFF;
+  width: 50px;
+  height: 40px;
 }
 .controlButton:active{
   background-color: #757AFF;
 }
-.controlButton:focus{
-  background-color: #757AFF;
-  border: none;
-}
+
 
 .title-curse{
   grid-column: 1/5;
@@ -106,31 +107,43 @@ li{
   align-self: center;
 }
 .icon-arrow{
-  position: relative;
-  bottom: 3px;
+  display: absolute;
+
+  bottom: 0px;
 }
 .grid-title{
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: 1fr;
 }
-@media (max-width: 644px) {
-  .controlButton.back{
-    height: 50%;
-  }
-  .controlButton.next{
-    height: 50%;
-  }
-  .icon-arrow{
-    bottom: 0px;
-  }
+.container-app{
+  margin: 10px;
+}
+#nav-main-large{
+  display: flex;
+}
+#nav-main-small {
+  display: flex;
+  width: 131%;
+
+  left: -38px;
+  position: relative;
+}
+#button_menu{
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example-accordion-item-header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 //XSmall
 @media (max-width: 599.98px) {
-  .icon-arrow{
-    top: 5px;
-    bottom: 0px;
-  }
+
   .cont-chapter{
     line-height: 1.5;
     font-size: 10.5px;

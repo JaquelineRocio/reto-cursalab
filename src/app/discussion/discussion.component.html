@@ -1,26 +1,61 @@
-<h3>Discussion</h3>
+<b><h3>Discussion</h3></b>
   <div class="comentario">
-    <h4>Robin Sherbasky</h4>
+    <div class="name-img">
+      <img src="../../assets/img/user1.jpg" alt="user1" class="user-photo">
+
+      <b><h4 class="name">Robin Sherbasky</h4></b>
+    </div>
+
     Cool stuff tutor! I'm wondering where I can find the list of recommended resources..
-    <div class="d-flex">
+    <div class="reply">
+      <mat-icon>reply</mat-icon>
       <p class="m-2">Reply</p>
+      <div class="point"></div>
       <p class="m-2">Show 8 replies</p>
     </div>
   </div>
   <div>
-    <h4>Jason Statham</h4>
-    <h5>Motion in UI </h5>
-    <audio controls class="audio-res">
-      <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+    <div class="name-img">
+      <img src="../../assets/img/user2.jpg" alt="user1" class="user-photo">
+
+      <b><h4 class="name">Jason Statham</h4></b>
+    </div>
+
+    <audio class="audio-res" #audioRes (timeupdate)="updateTime(audioRes.currentTime)" >
+      <source src="../../assets/audio/audio-example.mp3" type="audio/mp3">
     Your browser does not support the audio element.
     </audio>
-    <div class="d-flex">
-      <p class="m-2">Reply</p>
-      <p class="m-2">Show 8 replies</p>
+    <div class="audio-container">
+      <button (click)="playPause(audioRes)" class="button-play" >
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+      <div class="slider-audio">
+        <mat-slider
+        class="example-margin"
+        [max]="audioRes.duration"
+        [min]="0"
+        [step]="1"
+        [(ngModel)]="value"
+        aria-labelledby="slider-audio"
+        >
+        </mat-slider>
+    <p class="m-3">{{toInt(value)}}</p>
+      </div>
+    </div>
+
+    <div class="reply">
+      <mat-icon>reply</mat-icon>
+      <p class="m-2"> Reply</p>
+      <div class="point"></div>
+      <p class="m-2">Hide replies</p>
     </div>
 
     <div class="respuesta">
-        <h4>Natalie Rider</h4>
+      <div class="name-img">
+        <img src="../../assets/img/user3.jpg" alt="user1" class="user-photo">
+
+        <h4 class="name">Natalie Rider</h4>
+      </div>
         <p>Yeah sure, I have made a pdf with all the links to the resources which she has provided is of outstanding quality</p>
     </div>
   </div>

@@ -1,4 +1,5 @@
-<nav id="nav-main">
+<nav [id]="isLarge?'nav-main-large':'nav-main-small'">
+  <li *ngIf="!isLarge"> <button id="button_menu" (click)="onClickButtonMenu($event)"><mat-icon>menu</mat-icon> </button></li>
   <li class="inactive">Courses / </li>
   <li class="inactive"> Design /</li>
   <li> Masterclass: Designing for web</li>
@@ -23,7 +24,6 @@
         class="controlButton next"
         value="Next"
         (click)="onNextChapter()"
-        autofocus
         >
         <mat-icon
         class="icon-arrow"
@@ -44,16 +44,23 @@
   >
   Tu navegador no admite el elemento <code>video</code>.
 </video>
-<cdk-accordion class="example-accordion">
+
+<cdk-accordion class="example-accordion" *ngIf="sizeScreen!== 'Large'&&sizeScreen!='XLarge'">
   <cdk-accordion-item
     #accordionItem="cdkAccordionItem"
     class="example-accordion-item"
     role="button"
     tabindex="0">
-    <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
-      {{ chapters[cont].title}}
+    <mat-card>
+      <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+       <p>{{ chapters[cont].title}}</p>
 
-    </div>
+        <mat-icon>
+          expand_more
+        </mat-icon>
+      </div>
+    </mat-card>
+
     <div
       class="example-accordion-item-body"
       role="region"
@@ -83,7 +90,6 @@
           <div class="d-flex">
             <img src="../../assets/img/user-photo-instructor.jpg" alt="user photo instructor" class="photo-instructor">
             <p>
-              {{sizeScreen}}
               Natalie Storm <br>
               Design Department
             </p>

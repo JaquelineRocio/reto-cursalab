@@ -41,6 +41,12 @@ export class AppComponent implements OnDestroy{
 
   }
 
+  isLarge(){
+    if (this.currentScreenSize=='Large' || this.currentScreenSize=='XLarge')
+      return true;
+    else
+      return false
+  }
   ngOnDestroy() {
     this.destroyed.next();
     this.destroyed.complete();

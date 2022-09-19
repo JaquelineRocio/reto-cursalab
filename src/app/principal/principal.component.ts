@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { Chapter } from '../interfaces/chapter';
 import { ChaptersService } from '../services/chapters.service';
@@ -10,9 +10,14 @@ import { ChaptersService } from '../services/chapters.service';
 })
 export class PrincipalComponent implements OnInit {
   @Input() sizeScreen: String = 'Large';
+  @Input() isLarge: Boolean = false;
+  @Output() button_menu_event = new EventEmitter<Event>();
   colorTab: ThemePalette = 'warn'
   chapters: Array<Chapter> = [{title: '', link:'', completed: false, activated: false, timeVideo:0}]
 
+  onClickButtonMenu(event: Event){
+    this.button_menu_event.emit(event)
+  }
   onNextChapter(){
     if(this.chaptersService.chapters[this.cont].completed)
     {
